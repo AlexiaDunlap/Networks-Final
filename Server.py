@@ -12,7 +12,7 @@ q = json.load(input_file)
 
 app = Flask(__name__)
 Bootstrap(app)
-
+monster = ''
 #Bootstrap(app1)
 
 #{% extends "bootstrap_responsive.html" %}
@@ -42,7 +42,18 @@ def animal():
 
     return render_template('animal.html', uname = username)
 
-
+@app.route('/home2', methods=['GET', 'POST'])
+def action():
+    a = request.remote_addr
+    act = request.form['user_action']
+    update = update_stats(a, act)
+    if q['user'][0]['user_ip'] == a:
+        anm = q['user'][0]['species']
+    else:
+        anm = q['user'][1]['species']
+    print(update)
+    print(act)
+    return render_template('home.html', animal=anm)
 
 
 @app.route('/home', methods=['GET', 'POST'])

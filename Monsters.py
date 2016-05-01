@@ -6,20 +6,12 @@ q = json.load(input_file)
 class Snake:
     def __init__(self, index):
         self.name = 'Snake'
-        self.hp = q['user'][0]['health']
+        self.hp = 300
         self.attack = 7
         self.speed = 8
         self.defense = 5
         self.spc_attack = 21
         self.spc_spurn = 7
-
-    def isAttacked(self, health):
-        q['user'][0]['health'] = q['user'][0]['health'] - 30
-        return(q['user'][0]['health'])
-
-    def getAttackInfo(self):
-        return self.speed,
-
 
 
 class Rabbit:

@@ -26,17 +26,17 @@ When defending, the attack power of the other player against you is diminished b
 When using your super attack you do a much larger amount of damage against your opponent, lowering their health. However, you will also lower your health with a recoil, although the recoil power is lower than most attacks.
 
 Whichever player gets to 0 health first is the loser. Try to keep your health above your opponent's to be victorious!</p>
-      <p><a href="/index.html" class="btn btn-default btn-lg" role="button">Link</a>
-      <button type="submit" class="btn btn-danger" role="button">Button</button></p>
     </div>
   </div>
 <div class="container">
+    <div class="jumbotron">
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
       <h4>Game Controls</h4>
-      <p> <button type="button" class="btn btn-danger" role="button">Attack</button></p>
-      <p><button type="button" class="btn btn-info" role="button">Wait</button></p>
-      <p><button type="button" class="btn btn-warning" role="button">Special Attack</button></p>
-      <p><button type="button" class="btn btn-primary" role="button">Defend</button> </p>
+        <form action="/home2" method="post" class="add-entry">
+      <p><input type="submit" value="Attack" name="user_action" class="btn btn-danger" ></p>
+      <p><input type="submit" value="Wait" name="user_action" class="btn btn-info"></p>
+      <p><input type="submit" value="Special Attack" name="user_action" class="btn btn-warning"></p>
+        </form>
     </div>
 
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -68,6 +68,6 @@ Whichever player gets to 0 health first is the loser. Try to keep your health ab
       </div>
     </div>
   </div>
-
+</div>
 </div>
 {% endblock %}
