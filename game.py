@@ -8,11 +8,20 @@ m1 = Snake(0)
 m2 = Snake(2)
 
 
+def get_user():
+    return q['user'][0]['username'], q['user'][1]['username']
+
+
+def get_health():
+    return q['user'][0]['health'], q['user'][1]['health']
+
+
 def get_animal(user_ip):
     if q['user'][0]['user_ip'] == user_ip:
         return q['user'][0]['species']
     else:
         return q['user'][1]['species']
+
 
 def set_username(user_ip, username):
     if q['user'][0]['username'] == "test name":

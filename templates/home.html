@@ -1,13 +1,55 @@
 {% extends "bootstrap/base.html" %}
 {% block title %}This is an example page{% endblock %}
 
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
-{% endblock %}
-
 {% block content %}
+{% if health_a|string() <= "0" and health_b|string() > "0" %}
+<div class="container">
+    <div class="page-header">
+      <h1>The Game!</h1>
+    </div>
+    <div class="jumbotron">
+      <h1>GAME IS OVER!</h1>
+       <p>{{user_b}} has won the game! Would you like to play again? </p>
+        <form action="/" method="post" class="add-entry">
+      <p><input type="submit" value="Play Again" class="btn btn-info"></p>
+            </form>
+        </div>
+    </div>
+{% endif %}
+
+{% if health_b|string() <= "0" and health_a|string() > "0" %}
+<div class="container">
+    <div class="page-header">
+      <h1>The Game!</h1>
+    </div>
+    <div class="jumbotron">
+      <h1>GAME IS OVER!</h1>
+       <p>{{user_a}} has won the game! Would you like to play again? </p>
+        <form action="/" method="post" class="add-entry">
+      <p><input type="submit" value="Play Again" class="btn btn-info"></p>
+            </form>
+        </div>
+    </div>
+{% endif %}
+
+{% if health_b|string() <= "0" and health_a|string() <= "0" %}
+<div class="container">
+    <div class="page-header">
+      <h1>The Game!</h1>
+    </div>
+    <div class="jumbotron">
+      <h1>GAME IS OVER!</h1>
+       <p>It's a tie! Would you like to play again? </p>
+        <form action="/" method="post" class="add-entry">
+      <p><input type="submit" value="Play Again" class="btn btn-info"></p>
+            </form>
+        </div>
+    </div>
+{% endif %}
+
+
+{% if health_b|string() > "0" and health_a|string() > "0" %}
+
   <div class="container">
     <div class="page-header">
       <h1>The Game!</h1>
@@ -70,4 +112,6 @@ Whichever player gets to 0 health first is the loser. Try to keep your health ab
   </div>
 </div>
 </div>
+{% endif %}
 {% endblock %}
+
