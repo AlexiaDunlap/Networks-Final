@@ -53,10 +53,6 @@ def index():
     print(monster)
     print(a)
     print(anm)
-   # if a == q['user'][0]['user_ip']:
-   #     anm = q['user'][0]['species']
-   # else:
-   #     anm = q['user'][1]['species']
     return render_template('home.html', animal=anm)
 
 
