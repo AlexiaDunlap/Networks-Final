@@ -1,0 +1,73 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="page-header">
+      <h1>The Game!</h1>
+    </div>
+    <div class="jumbotron">
+      <p>Instructions:
+
+Click the Start Game button to begin by entering your username. Player one gets to go first, player two will only start the game after player one has completed the username and animal selection section. After you have typed your username, click the submit box.
+
+You will have the choice of four different animals to play with, each of them having their own stats for attack, defense, super attack, and recoil.
+
+When attacking the other player's health will be diminished by the attack power of your animal.
+
+When defending, the attack power of the other player against you is diminished by your defense power. Depending on your animal's stats you may receive less damage, or no damage at all.
+
+When using your super attack you do a much larger amount of damage against your opponent, lowering their health. However, you will also lower your health with a recoil, although the recoil power is lower than most attacks.
+
+Whichever player gets to 0 health first is the loser. Try to keep your health above your opponent's to be victorious!</p>
+      <p><a href="/index.html" class="btn btn-default btn-lg" role="button">Link</a>
+      <button type="submit" class="btn btn-danger" role="button">Button</button></p>
+    </div>
+  </div>
+<div class="container">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <h4>Game Controls</h4>
+      <p> <button type="button" class="btn btn-danger" role="button">Attack</button></p>
+      <p><button type="button" class="btn btn-info" role="button">Wait</button></p>
+      <p><button type="button" class="btn btn-warning" role="button">Special Attack</button></p>
+      <p><button type="button" class="btn btn-primary" role="button">Defend</button> </p>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <h4>Game Image</h4>
+      <div class="media">
+          {% if animal|string() == "Lion"|string() %}
+       <img src="/static/images/cats.png" alt="CATS" >
+        {% endif %}
+        {% if animal|string() == "Snake"|string() %}
+      <img src="/static/images/snake.jpg" alt="SNAKE" >
+         {% endif %}
+         {% if animal|string() == "Rabbit"|string()%}
+      <img src="/static/images/rabbit.jpg" alt="RABBIT" >
+         {% endif %}
+         {% if animal|string() == "Dragon"|string()%}
+      <img src="/static/images/dragon.jpg" alt="DRAGON" >
+         {% endif %}
+
+
+      </div>
+
+    </div>
+
+  <div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+      <h4><a href="#col1Content" data-toggle="collapse">Column1</a></h4>
+      <div id="col1Content" class="collapse in">
+        Here is some interesting imagery or extra stuff
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

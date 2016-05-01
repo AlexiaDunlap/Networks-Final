@@ -1,0 +1,28 @@
+{
+    "user":  [
+        {
+            "username": "test name"
+        ,   "species":  "Snake"
+        ,   "health":   300
+        ,   "attack":   7
+        ,   "speed":    8
+        ,   "defense":  5
+        ,   "spc_attack": 21
+        ,   "spc_spurn":  7
+        ,   "user_ip":  7
+        },
+
+        {
+            "username": "test name"
+        ,   "species":  "Snake"
+        ,   "health":   300
+        ,   "attack":   7
+        ,   "speed":    8
+        ,   "defense":  5
+        ,   "spc_attack": 21
+        ,   "spc_spurn":  7
+        ,   "user_ip":  7
+        }
+
+    ]
+}

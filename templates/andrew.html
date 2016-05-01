@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" href="example.css" />
+
+  <link rel="stylesheet" href="chosen/chosen.css" />
+  <link rel="stylesheet" href="chosenImage/chosenImage.css" />
+
+  <title>Chosen Image Plugin</title>
+
+</head>
+<body>
+
+<div id="container">
+  <form>
+    <h1>Chosen Image</h1>
+    <p>Extends the functionaility of the <a href="http://harvesthq.github.com/chosen/">chosen plugin by Harvest</a> to display inline images in dropdown menus</p>
+
+    Download source from <a href="https://github.com/djgrant/chosen-image">https://github.com/djgrant/chosen-image</a>
+
+    <h2>Example</h2>
+    <select data-placeholder="Choose a Project..." class="my-select" style="width:350px;" tabindex="2">
+      <option data-img-src="chosenImage/flag-red.gif">Project A</option>
+      <option data-img-src="chosenImage/flag-purple.gif">Project B</option>
+      <option class="image-test-class">Project C</option>
+      <option data-img-src="chosenImage/flag-purple.gif">Project D</option>
+      <option title="title-test-class">Project E</option>
+    </select>
+  </form>
+
+  <h2>Usage</h2>
+
+  <p>Add attribute <code>data-img-src</code> to <code>&lt;option&gt;</code> items with the source of your image file.</p>
+
+  <pre><code>&lt;select data-placeholder=&quot;Choose a Project...&quot; class=&quot;my-select&quot; style=&quot;width:350px;&quot; tabindex=&quot;2&quot;&gt;
+  &lt;option data-img-src=&quot;chosenImage/flag-red.gif&quot;&gt;Project A&lt;/option&gt;
+  &lt;option&gt;Project B&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+  <p>Use <code>chosenImage()</code> in place of <code>chosen()</code> passing in the same properties:</p>
+  <pre><code>$(".my-select").chosenImage({
+  disable_search_threshold: 10
+});</code></pre>
+
+
+  <p>All properties of <code>chosen()</code> are available through <code>chosenImage()</code></p>
+
+  <p>By default images are resized to 19px tall in <code>chosenImage.css</code><p>
+
+  <h2>Dependencies</h2>
+  <ul>
+    <li>jQuery 1.4+</li>
+    <li><a href="http://github.com/harvesthq/chosen/">Chosen</a></li>
+  </ul>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="chosen/chosen.jquery.js" type="text/javascript"></script>
+<script src="chosenImage/chosenImage.jquery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  $(".my-select").chosenImage({
+    disable_search_threshold: 10
+  });
+</script>
+
+</body>
+</html>
