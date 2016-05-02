@@ -1,13 +1,13 @@
 {% extends "bootstrap/base.html" %}
-{% block title %}This is an example page{% endblock %}
-
-{% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
-{% endblock %}
+{% block title %}Animal Hey Rube{% endblock %}
 
 {% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+            <center><h1>Welcome to <b>Animal Hey Rube</b>!</h1>
+            <p style="font-size:20px>">You're just a couple steps from playing the game. Start by typing in your username and clicking the 'Submit' button.</p></center>
+
 <div class="container">
 <form action="/animal" method="post" class="add-entry">
     <div class="modal-dialog">
@@ -26,6 +26,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-2 col-md-offset-8">
+                            <br>
                             <input type="submit" class="btn btn-info" value="Submit">
                         </div>
                     </div>
@@ -36,4 +37,6 @@
     </div>
     </form>
 </div>
+        </div>
+    </div>
 {% endblock %}

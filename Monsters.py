@@ -8,7 +8,7 @@ class Snake:
         self.name = 'Snake'
         self.hp = 300
         self.attack = 7
-        self.speed = 8
+        self.speed = 8000
         self.defense = 5
         self.spc_attack = 21
         self.spc_spurn = 7
@@ -19,7 +19,7 @@ class Rabbit:
         self.name = 'Rabbit'
         self.hp = 300
         self.attack = 4
-        self.speed = 10
+        self.speed = 5000
         self.defense = 7
         self.spc_attack = 30
         self.spc_spurn = 4
@@ -30,7 +30,7 @@ class Lion:
         self.name = 'Lion'
         self.hp = 300
         self.attack = 8
-        self.speed = 7
+        self.speed = 10000
         self.defense = 3
         self.spc_attack = 24
         self.spc_spurn = 8
@@ -41,7 +41,7 @@ class Dragon:
         self.name = 'Dragon'
         self.hp = 300
         self.attack = 10
-        self.speed = 4
+        self.speed = 15000
         self.defense = 2
         self.spc_attack = 30
         self.spc_spurn = 10

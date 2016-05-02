@@ -2,23 +2,20 @@
 {% block title %}This is an example page{% endblock %}
 
 {% block navbar %}
-<div class="navbar navbar-fixed-top">
-  <!-- ... -->
-</div>
+
 {% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="jumbotron">
-        <p>
-            <h1>Choose Your Animal</h1>
-            Hello {{uname}} Click the animal you would like to play with!
-        </p>
+            <center><h1>Choose Your Animal</h1>
+            <p style="font-size:20px>">Hello {{uname}} Click the animal you would like to play with!</p></center>
+
         <form action="/home" method="post" class="add-entry">
 
             <div class="media">
-                <input type="image" value='Lion' name='animal_type' src="/static/images/cats.png" alt="CATS" ><input type="image" value="Rabbit" name="animal_type" src="/static/images/rabbit.jpg" height="209" width="310" alt="BUNNY" ><br>
-                <input type="image" value="Dragon" name="animal_type" src="/static/images/dragon.jpg" height="209" width="310" alt="DRAGON"><input type="image" value="Snake" name="animal_type" src="/static/images/snake.jpg" width="310" height="209" alt="SNAKE" >
+                <input type="image" value='Lion' name='animal_type' src="/static/images/lion.jpg" alt="LION" style="margin: 0px 5px" ><input type="image" value="Rabbit" name="animal_type" style="margin: 0px 5px" src="/static/images/rabbit.png" alt="BUNNY" ><br>
+                <input type="image" value="Dragon" name="animal_type" src="/static/images/dragon1.jpg" style="margin: 0px 5px" alt="DRAGON"><input type="image" value="Snake" name="animal_type" style="margin: 0px 5px" src="/static/images/snake1.jpg" alt="SNAKE" >
             </div>
         </form>
 

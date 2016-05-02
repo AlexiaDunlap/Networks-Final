@@ -8,6 +8,49 @@ m1 = Snake(0)
 m2 = Snake(2)
 
 
+def reset_monster():
+    m1 = Snake(0)
+    m2 = Snake(1)
+    m1.hp = 300
+    m2.hp = 300
+    q['user'][0]['health'] = 300
+    q['user'][0]['attack'] = m1.attack
+    q['user'][0]['speed'] = m1.speed
+    q['user'][0]['defense'] = m1.defense
+    q['user'][0]['spc_attack'] = m1.spc_attack
+    q['user'][0]['spc_spurn'] = m1.spc_spurn
+    q['user'][1]['health'] = 300
+    q['user'][1]['attack'] = m2.attack
+    q['user'][1]['speed'] = m2.speed
+    q['user'][1]['defense'] = m2.defense
+    q['user'][1]['spc_attack'] = m2.spc_attack
+    q['user'][1]['spc_spurn'] = m2.spc_spurn
+
+    print(q)
+    return m1, m2
+
+
+def get_username(user_ip):
+    if q['user'][0]['user_ip'] == user_ip:
+        return q['user'][0]['username']
+    else:
+        return q['user'][1]['username']
+
+
+def get_stats(user_ip):
+    if q['user'][0]['user_ip'] == user_ip:
+        return q['user'][0]['attack'], q['user'][0]['spc_attack'], q['user'][0]['spc_spurn'], q['user'][0]['speed']
+    else:
+        return q['user'][1]['attack'], q['user'][1]['spc_attack'], q['user'][1]['spc_spurn'], q['user'][1]['speed']
+
+
+def get_hp(user_ip):
+    if q['user'][0]['user_ip'] == user_ip:
+        return q['user'][0]['health']
+    else:
+        return q['user'][1]['health']
+
+
 def get_user():
     return q['user'][0]['username'], q['user'][1]['username']
 
