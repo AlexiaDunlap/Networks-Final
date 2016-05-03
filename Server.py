@@ -32,6 +32,7 @@ def animal():
     user_ip = request.remote_addr
     a = set_username(user_ip, username)
     print(a)
+    print('finished loading /animal')
     return render_template('animal.html', uname=username)
 
 
@@ -52,12 +53,19 @@ def action():
 
 @app.route('/home', methods=['GET', 'POST'])
 def index():
+    print('started loading /home')
     hp = '300'
+    print('hp initialize')
     a = request.remote_addr
+    print(a)
     anm = request.form['animal_type']
+    print('3')
     monster = set_animal(a, anm)
+    print('4')
     health_a, health_b = get_health()
+    print('5')
     c, d, e, f = get_stats(a)
+    print('finished loading /home')
     print(monster)
     print(a)
     print(anm)
