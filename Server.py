@@ -18,14 +18,6 @@ def hello():
     return render_template('index.html')
 
 
-@app.route('/animal2', methods=['GET', 'POST'])
-def animal2():
-    reset_monster()
-    a = request.remote_addr
-    username = get_username(a)
-    return render_template('animal.html', uname=username)
-
-
 @app.route('/animal', methods=['GET', 'POST'])
 def animal():
     username = request.form['uname']
@@ -48,7 +40,7 @@ def action():
     b, c, d, e = get_stats(a)
     print(update)
     print(act)
-    return render_template('home.html', animal=anm, health_a=health_a, health_b=health_b, user_a=user_a, user_b=user_b, hp=hp, attack=b, spc_attack=c, spc_spurn=c, speed=e)
+    return render_template('home.html', animal=anm, health_a=health_a, health_b=health_b, user_a=user_a, user_b=user_b, hp=hp, attack=b, spc_attack=c, spc_spurn=d, speed=e)
 
 
 @app.route('/home', methods=['GET', 'POST'])

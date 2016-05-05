@@ -1,5 +1,5 @@
 {% extends "bootstrap/base.html" %}
-{% block title %}This is an example page{% endblock %}
+{% block title %}Animal Hey Rube{% endblock %}
 {% block content %}
 <script type="text/javascript">
 
@@ -22,10 +22,7 @@ function setDisabled() {
     </div>
     <div class="jumbotron">
       <h1>GAME IS OVER!</h1>
-       <p>{{user_b}} has won the game! Would you like to play again? </p>
-        <form action="/animal2" method="post" class="add-entry">
-      <p><input type="submit" value="Play Again" class="btn btn-info"></p>
-            </form>
+       <p>{{user_b}} has won the game! </p>
         </div>
     </div>
 {% endif %}
@@ -37,10 +34,8 @@ function setDisabled() {
     </div>
     <div class="jumbotron">
       <h1>GAME IS OVER!</h1>
-       <p>{{user_a}} has won the game! Would you like to play again? </p>
-        <form action="/animal2" method="post" class="add-entry">
-      <p><input type="submit" value="Play Again" class="btn btn-info"></p>
-            </form>
+       <p>{{user_a}} has won the game!</p>
+
         </div>
     </div>
 {% endif %}
@@ -52,10 +47,8 @@ function setDisabled() {
     </div>
     <div class="jumbotron">
       <h1>GAME IS OVER!</h1>
-       <p>It's a tie! Would you like to play again? </p>
-        <form action="/animal2" method="post" class="add-entry">
-      <p><input type="submit" value="Play Again" class="btn btn-info"></p>
-            </form>
+       <p>It's a tie! </p>
+
         </div>
     </div>
 {% endif %}
