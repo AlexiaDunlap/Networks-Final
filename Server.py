@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_from_directory
 from flask_bootstrap import Bootstrap
 import os
+import time
 from game import *
 
 app = Flask(__name__)
@@ -15,6 +16,10 @@ def favicon():
 
 @app.route("/", methods=['GET', 'POST'])
 def hello():
+    user_ip = request.remote_addr
+    with open('Server_Log_File.log', 'w') as logfile:
+            logfile.write("Got connection from user at IP address: " + user_ip + " at time: " +
+                          time.strftime("%c") + "\n")
     return render_template('index.html')
 
 
@@ -23,8 +28,9 @@ def animal():
     username = request.form['uname']
     user_ip = request.remote_addr
     a = set_username(user_ip, username)
-    print(a)
-    print('finished loading /animal')
+    with open('Server_Log_File.log', 'a') as logfile:
+            logfile.write("Got connection from user at IP address: " + user_ip + " at time: " +
+                          time.strftime("%c") + " username created: " + username + "\n")
     return render_template('animal.html', uname=username)
 
 
@@ -33,34 +39,30 @@ def action():
     health_a, health_b = get_health()
     user_a, user_b = get_user()
     a = request.remote_addr
+    username = get_username(a)
     act = request.form['user_action']
     update = update_stats(a, act)
     anm = get_animal(a)
     hp = get_hp(a)
     b, c, d, e = get_stats(a)
-    print(update)
-    print(act)
+    with open('Server_Log_File.log', 'a') as logfile:
+            logfile.write("Got connection from user at IP address: " + a + " at time: " +
+                          time.strftime("%c") + " username created: " + username + " action chosen: " + act + "\n")
     return render_template('home.html', animal=anm, health_a=health_a, health_b=health_b, user_a=user_a, user_b=user_b, hp=hp, attack=b, spc_attack=c, spc_spurn=d, speed=e)
 
 
 @app.route('/home', methods=['GET', 'POST'])
 def index():
-    print('started loading /home')
     hp = '300'
-    print('hp initialize')
     a = request.remote_addr
-    print(a)
     anm = request.form['animal_type']
-    print('3')
+    username = get_username(a)
     monster = set_animal(a, anm)
-    print('4')
     health_a, health_b = get_health()
-    print('5')
     c, d, e, f = get_stats(a)
-    print('finished loading /home')
-    print(monster)
-    print(a)
-    print(anm)
+    with open('Server_Log_File.log', 'a') as logfile:
+            logfile.write("Got connection from user at IP address: " + a + " at time: " +
+                          time.strftime("%c") + " username created: " + username + " animal chosen: " + anm + "\n")
     return render_template('home.html', animal=anm, health_a=health_a, health_b=health_b, hp=hp, attack=c, spc_attack=d, spc_spurn=e, speed=f)
 
 
